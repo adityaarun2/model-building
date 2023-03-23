@@ -1,5 +1,4 @@
 # Model Building
-This is Project 3 by Aditya Arun and Mohit Sridhar for DSC 80 at UCSD
 
 Welcome to the exploratory data analysis project on the relationship between cooking ingredients and average rating of recipes! In this project, we will aim to investigate whether there is a correlation between the complexity of a recipe and how highly it is rated by users.
 
