@@ -30,3 +30,24 @@ Additionally, it is important to note what type of information will likely be pr
 | 412 broccoli casserole               | 306168 |        40 |            50969 | 2008-05-30  |         6 |               9 |            5 |      194.8 |                20 |             6 |             32 |              22 |                    36 |                     3 | simple       |
 | millionaire pound cake               | 286009 |       120 |           461724 | 2008-02-12  |         7 |               7 |            5 |      878.3 |                63 |           326 |             13 |              20 |                   123 |                    39 | simple       |
 | 2000 meatloaf                        | 475785 |        90 |          2202916 | 2012-03-06  |        17 |              13 |            5 |      267   |                30 |            12 |             12 |              29 |                    48 |                     2 | complex      |
+
+---
+
+## Baseline Model
+
+#### Create and split the data
+The first step in building the baseline model is to create our test and training sets. In order to do this, we will utilize `sklearn`'s `train_test_split` function. Additionally, we will use the default split proportion of 0.25.
+
+The first couple of features we will build our baseline model on are: `complexity` (a categorical column) and `n_steps` (a quantitative column).
+
+Since `complexity` is a categorical column, we will have to transform it. Here, we will use the `OneHotEncoder()` because there are only two types of complexities: `simple` or `complex`. Moreover, we decided to drop one of the columns in order to prevent multicollinearity. As we will see later on, the `OneHotEncoder()` has only one category called `x0_simple` indicating that a value of 1 means a recipe is `simple` (less than 9 ingredients), while a value of `0` means a recipe is `complex` (greater than 9 ingredients).
+
+We will leave `n_steps` as it is because it is a quantitative column.
+
+#### Training the Pipeline
+Now that we have our transformers and `Pipeline` declared, we are ready to train our model. Below, we fit the Pipeline on the `X_train` and `y_train` data sets that we created earlier.
+
+#### Performance
+Our Root Mean Squared Error is `0.6319575251766202`. This means that, on average, our model's predictions differed from the actual ratings by about 0.63. Considering that the `avg_ratings` are on a scale from 1 to 5, this is an average performance. For example, if we decide to round the RMSE up, we will be nearly a whole rating (1) off from the actual ratings most of the time. 
+
+---
