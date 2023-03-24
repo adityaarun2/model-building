@@ -37,7 +37,7 @@ Additionally, it is important to note what type of information will likely be pr
 
 <center><img src="ml.jpg" alt="Picture of a robot thinking" height="300" width="450"></center>
 
-### Create and split the data
+### Create and Split the Data
 The first step in building the baseline model is to create our test and training sets. In order to do this, we will utilize `sklearn`'s `train_test_split` function. Additionally, we will use the default split proportion of 0.25.
 
 The first couple of features we will build our baseline model on are: `complexity` (a categorical column) and `n_steps` (a quantitative column).
