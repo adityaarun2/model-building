@@ -12,7 +12,7 @@ We hope that this project will help food enthusiasts and cooking enthusiasts dis
 
 ---
 
-## Problem Identification
+### Problem Identification
 
 The prediction problem we are going to be exploring is predicting the average rating of a given recipe. Since this is a **regression** problem, we will be building a linear regression model using `sklearn` in order to solve it.
 
@@ -33,7 +33,7 @@ Additionally, it is important to note what type of information will likely be pr
 
 ---
 
-## Baseline Model
+### Baseline Model
 
 #### Create and split the data
 The first step in building the baseline model is to create our test and training sets. In order to do this, we will utilize `sklearn`'s `train_test_split` function. Additionally, we will use the default split proportion of 0.25.
