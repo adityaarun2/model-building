@@ -1,4 +1,4 @@
-## The Great Recipe Rating Race: Using Machine Learning to Help You Cook Like a Pro!
+# The Great Recipe Rating Race: Using Machine Learning to Help You Cook Like a Pro!
 
 Welcome to our model building project, a project focused on predicting ratings of recipes. The goal of this project is to develop a machine learning model that can accurately predict the ratings of recipes based on various features such as ingredients, cooking time, and difficulty level. This is a regression problem, as the predicted variable (ratings) is a continuous numerical variable.
 
@@ -12,7 +12,7 @@ We hope that this project will help food enthusiasts and cooking enthusiasts dis
 
 ---
 
-### Problem Identification
+## Problem Identification
 
 The prediction problem we are going to be exploring is predicting the average rating of a given recipe. Since this is a **regression** problem, we will be building a linear regression model using `sklearn` in order to solve it.
 
@@ -33,9 +33,9 @@ Additionally, it is important to note what type of information will likely be pr
 
 ---
 
-### Baseline Model
+## Baseline Model
 
-#### Create and split the data
+### Create and split the data
 The first step in building the baseline model is to create our test and training sets. In order to do this, we will utilize `sklearn`'s `train_test_split` function. Additionally, we will use the default split proportion of 0.25.
 
 The first couple of features we will build our baseline model on are: `complexity` (a categorical column) and `n_steps` (a quantitative column).
@@ -44,10 +44,10 @@ Since `complexity` is a categorical column, we will have to transform it. Here, 
 
 We will leave `n_steps` as it is because it is a quantitative column.
 
-#### Training the Pipeline
+### Training the Pipeline
 Now that we have our transformers and `Pipeline` declared, we are ready to train our model. Below, we fit the Pipeline on the `X_train` and `y_train` data sets that we created earlier.
 
-#### Performance
+### Performance
 After fitting our pipeline creating a prediction based on the input testing set, we end up with a Root Mean Squared Error of `0.6319575251766202`. This means that, on average, our model's predictions differed from the actual ratings by about 0.63. Considering that the `avg_ratings` are on a scale from 1 to 5, this is not the best performance. For example, if we decide to round the RMSE up, we will be nearly a whole rating (1) off from the actual ratings most of the time. 
 
 ---
