@@ -8,11 +8,14 @@ The dataset used for this analysis is collected from <a href="food.com">food.com
 
 We hope that this project will help food enthusiasts and cooking enthusiasts discover new and highly-rated recipes with ease.
 
+Check out our exploratory data analysis on the same dataset <a href="https://www.adityaarun2.github.io/exploratory-data-analysis-project/">here</a>!
+
+
 <center><img src="cook.jpeg" alt="Picture of food getting cooked" height="300" width="600"></center>
 
 ---
 
-## Problem Identification
+## Framing the Problem
 
 The prediction problem we are going to be exploring is predicting the average rating of a given recipe. Since this is a **regression** problem, we will be building a linear regression model using `sklearn` in order to solve it.
 
@@ -35,8 +38,6 @@ Additionally, it is important to note what type of information will likely be pr
 
 ## Baseline Model
 
-<center><img src="ml.jpg" alt="Picture of a robot thinking" height="300" width="450"></center>
-
 ### Create and Split the Data
 The first step in building the baseline model is to create our test and training sets. In order to do this, we will utilize `sklearn`'s `train_test_split` function. Additionally, we will use the default split proportion of 0.25.
 
@@ -51,6 +52,8 @@ Now that we have our transformers and `Pipeline` declared, we are ready to train
 
 ### Model Performance
 After fitting our pipeline creating a prediction based on the input testing set, we end up with an $R^2$ of our model is `-0.00017975548942428254`. This means that our model barely, if not, didn't fit with the testing data at all. This current baseline model is **not good** based off this performance. In other words, there was a very poor linear fit. Hopefully by adding more features, we can improve the performance in the Final Model.
+
+<center><img src="ml.jpg" alt="Picture of a robot thinking" height="300" width="450"></center>
 
 ---
 
