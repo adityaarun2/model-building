@@ -10,6 +10,8 @@ To evaluate our model's performance, we will use the root mean squared error (RM
 
 We hope that this project will help food enthusiasts and cooking enthusiasts discover new and highly-rated recipes with ease.
 
+<center><img src="cook.jpeg" alt="Picture of food getting cooked" height="500" width="500"></center>
+
 ---
 
 ## Problem Identification
@@ -34,6 +36,8 @@ Additionally, it is important to note what type of information will likely be pr
 ---
 
 ## Baseline Model
+
+<center><img src="ml.jpg" alt="Picture of a robot thinking" height="500" width="500"></center>
 
 ### Create and split the data
 The first step in building the baseline model is to create our test and training sets. In order to do this, we will utilize `sklearn`'s `train_test_split` function. Additionally, we will use the default split proportion of 0.25.
