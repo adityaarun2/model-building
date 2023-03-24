@@ -82,7 +82,7 @@ The final model's performance was an improvement over the Baseline Model's perfo
 
 For our Fairness Analysis, we will be choosing groups based on how long a recipe takes to prepare, in minutes. We will split our data based on the `minutes` column with a threshold of 40 minutes. That is, a `long` recipe is anything greater than 40 minutes while a `short` recipe is anything below.
 
-Group X: `short` recipes that take 40 minutes or less.
+Group X: `short` recipes that take 40 minutes or less. \
 Group Y: `long` recipes that take over 40 minutes.
 
 - **Null Hypothesis:** Our model is fair. Its RMSE for short recipes and long recipes are roughly the same, and any differences are due to random chance.
