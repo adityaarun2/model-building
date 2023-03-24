@@ -75,3 +75,20 @@ The hyperparameter tuned was the threshold value for the Binarizer() transformer
 The $R^2$ of our final model is `0.0003677010479545828`. This is a clear improvement over our baseline model which had a negative $R^2$. Undoubtedly, the addition of the new features `calories` and `protein` were critical to the improvement in performance of our Linear Regression model. We believe this is because these are important factors people consider when rating recipes. They are important indicators of the nutritional value and overall healthiness of a recipe. For instance, a recipe with a low calorie count and high protein content is considered a healthy meal. These are aspects everyone takes into consideration when rating a recipe.
 
 The final model's performance was an improvement over the Baseline Model's performance as it included additional features such as calories and total fat. The addition of these features helped the model better predict recipe ratings, leading to a more accurate and comprehensive model.
+
+---
+
+## Fairness Analysis
+
+For our Fairness Analysis, we will be choosing groups based on how long a recipe takes to prepare, in minutes. We will split our data based on the `minutes` column with a threshold of 40 minutes. That is, a `long` recipe is anything greater than 40 minutes while a `short` recipe is anything below.
+
+Group X: `short` recipes that take 40 minutes or less.
+Group Y: `long` recipes that take over 40 minutes.
+
+- **Null Hypothesis:** Our model is fair. Its RMSE for short recipes and long recipes are roughly the same, and any differences are due to random chance.
+- **Alternative Hypothesis:** Our model is unfair. Its RMSE for short recipes is lower than its RMSE for long recipes.
+
+In order to evaluate our model, we will be using the **Root Mean Squared Error (RMSE)** as the metric. Specifically, we will be calculating the difference in RMSE between the two Groups X and Y. If the difference is negative, it means that the RMSE for short recipes is lower than the RMSE for long recipes. Additionally, we will be using a significance level of 𝛼 = 5%.
+
+### Conclusion
+After running the test for a 1000 repitions, the resulting p-value from our permutation test is 0.0, which is **less than** our significance level of 5% or 0.05. This means that the test was statistically significant, so we **reject the null**. In other words, our model *likely* performs worse for recipes in Group X compared to recipes in Group Y because the RMSE of the short recipe predictions were lower than the RMSE of the long recipe predictions.
