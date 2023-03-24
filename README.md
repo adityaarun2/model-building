@@ -1,4 +1,6 @@
-# Model Building
+# The Great Recipe Rating Race: Using Machine Learning to Help You Cook Like a Pro!
+## By Mohit Sridhar (msridhar@ucsd.edu) and Aditya Arun (adarun@ucsd.edu)
+
 
 Welcome to our model building project, a project focused on predicting ratings of recipes. The goal of this project is to develop a machine learning model that can accurately predict the ratings of recipes based on various features such as ingredients, cooking time, and difficulty level. This is a regression problem, as the predicted variable (ratings) is a continuous numerical variable.
 
