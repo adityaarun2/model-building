@@ -8,7 +8,7 @@ The dataset used for this analysis is collected from <a href="food.com">food.com
 
 We hope that this project will help food enthusiasts and cooking enthusiasts discover new and highly-rated recipes with ease.
 
-Check out our exploratory data analysis on the same dataset <a href="https://adityaarun2.github.io/exploratory-data-analysis-project/">here</a>!
+Check out our exploratory data analysis on the same dataset <a href="https://adityaarun2.github.io/exploratory-data-analysis-project/" target="_blank">here</a>!
 
 <center><img src="cook.jpeg" alt="Picture of food getting cooked" height="300" width="600"></center>
 
