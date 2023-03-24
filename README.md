@@ -50,6 +50,6 @@ We will leave `n_steps` as it is because it is a quantitative column.
 Now that we have our transformers and `Pipeline` declared, we are ready to train our model. Below, we fit the Pipeline on the `X_train` and `y_train` data sets that we created earlier.
 
 #### Performance
-After fitting our pipeline creating a prediction based on the input testing set, we end up with a Root Mean Squared Error of `0.6319575251766202`. This means that, on average, our model's predictions differed from the actual ratings by about 0.63. Considering that the `avg_ratings` are on a scale from 1 to 5, this is an average performance. For example, if we decide to round the RMSE up, we will be nearly a whole rating (1) off from the actual ratings most of the time. 
+After fitting our pipeline creating a prediction based on the input testing set, we end up with a Root Mean Squared Error of `0.6319575251766202`. This means that, on average, our model's predictions differed from the actual ratings by about 0.63. Considering that the `avg_ratings` are on a scale from 1 to 5, this is not the best performance. For example, if we decide to round the RMSE up, we will be nearly a whole rating (1) off from the actual ratings most of the time. 
 
 ---
