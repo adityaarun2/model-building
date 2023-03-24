@@ -65,7 +65,7 @@ Since the `calories` data has such a wide range and tends to be in the hundreds 
 ### Tuning the model
 In order to optimimze our model, we will utilzie `GridSearchCV` in order to find the best combinations of hyperparameters. Specifically, we will be searching for the best `threshold` for the `Binarizer()` transformer since we are unsure what a good cutoff is. This is a great way to tune our model and maximize performance in a concise manner.
 
-Now that we have the optimal threshold for our `Binarizer()`, we can create our Pipeline once again and evaluate the performance with R_n^2
+Now that we have the optimal threshold for our `Binarizer()`, we can create our Pipeline once again and evaluate the performance with $R^2$
 
 ### Model Performance
 
