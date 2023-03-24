@@ -65,4 +65,12 @@ Since the `calories` data has such a wide range and tends to be in the hundreds 
 ### Tuning the model
 In order to optimimze our model, we will utilzie `GridSearchCV` in order to find the best combinations of hyperparameters. Specifically, we will be searching for the best `threshold` for the `Binarizer()` transformer since we are unsure what a good cutoff is. This is a great way to tune our model and maximize performance in a concise manner.
 
-Now that we have the optimal threshold for our `Binarizer()`, we can create our Pipeline once again and evaluate the performance with $R^2$
+Now that we have the optimal threshold for our `Binarizer()`, we can create our Pipeline once again and evaluate the performance with $R^{2}$
+
+### Model Performance
+
+The model chosen is a regression model, which predicts recipe ratings based on features such as calories and total fat. The dataset was split into training and testing sets and the data was standardized using StdScaler for the calories column. Binarizer was applied to the saturated fat column with the threshold value determined by GridSearchCV.
+
+The hyperparameter tuned was the threshold value for the Binarizer() transformer. The method used to select hyperparameters was GridSearchCV. This method exhaustively searches through a specified parameter grid, fitting the estimator for each combination of parameters and returns the best combination. The performance of the Final Model was evaluated using RMSE, and the best performing hyperparameters were selected based on the lowest RMSE value.
+
+The Final Model's performance was an improvement over the Baseline Model's performance as it included additional features such as calories and total fat. The addition of these features helped the model better predict recipe ratings, leading to a more accurate and comprehensive model.
