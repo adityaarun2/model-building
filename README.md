@@ -69,8 +69,8 @@ Now that we have the optimal threshold for our `Binarizer()`, we can create our 
 
 ### Model Performance
 
-The model chosen is a regression model, which predicts recipe ratings based on features such as calories and total fat. The dataset was split into training and testing sets and the data was standardized using StdScaler for the calories column. Binarizer was applied to the saturated fat column with the threshold value determined by GridSearchCV.
+The model chosen is a regression model, which predicts recipe ratings based on features such as `calories` and `total_fat (PDV)`. The dataset was split into training and testing sets and the data was standardized using `StdScaler` for the calories column. `Binarizer` was applied to the saturated fat column with the threshold value determined by `GridSearchCV`.
 
-The hyperparameter tuned was the threshold value for the Binarizer() transformer. The method used to select hyperparameters was GridSearchCV. This method exhaustively searches through a specified parameter grid, fitting the estimator for each combination of parameters and returns the best combination. The performance of the Final Model was evaluated using RMSE, and the best performing hyperparameters were selected based on the lowest RMSE value.
+The hyperparameter tuned was the threshold value for the Binarizer() transformer. The method used to select hyperparameters was `GridSearchCV`. This method exhaustively searches through a specified parameter grid, fitting the estimator for each combination of parameters and returns the best combination. The performance of the Final Model was evaluated using RMSE, and the best performing hyperparameters were selected based on the lowest RMSE value.
 
 The Final Model's performance was an improvement over the Baseline Model's performance as it included additional features such as calories and total fat. The addition of these features helped the model better predict recipe ratings, leading to a more accurate and comprehensive model.
