@@ -55,3 +55,14 @@ Now that we have our transformers and `Pipeline` declared, we are ready to train
 After fitting our pipeline creating a prediction based on the input testing set, we end up with a Root Mean Squared Error of `0.6319575251766202`. This means that, on average, our model's predictions differed from the actual ratings by about 0.63. Considering that the `avg_ratings` are on a scale from 1 to 5, this is not the best performance. For example, if we decide to round the RMSE up, we will be nearly a whole rating (1) off from the actual ratings most of the time. 
 
 ---
+
+## Final Model
+
+The next couple of features that we will be adding on top of our baseline model are: `calories` and `total_fat (PDV)`. These features could improve the performace of our model because they are important aspects people consider when rating recipes. For example, someone on a diet would be looking for recipes with a low calorie count and low fat content. Therefore, recipes with high calories and fat might be rated lower when these additional features are considered. On the other hand, some delectable, but unhealthy, recipes such as desserts might be rated higher simply because they taste incredible. Let's begin exploring these relationships with our model. First, let's create and split our data set with the additional features mentioned above.
+
+Since the `calories` data has such a wide range and tends to be in the hundreds if not thousands, we will apply `StdScaler` in order to standardize the data. Moreover, we will apply `Binarizer` to the `saturated_fat (PDV)` column because it will be helpful to determine how much fat can be considered a significant amount. For the threshold, we will determine the best value using `GridSearchCV`.
+
+### Tuning the model
+In order to optimimze our model, we will utilzie `GridSearchCV` in order to find the best combinations of hyperparameters. Specifically, we will be searching for the best `threshold` for the `Binarizer()` transformer since we are unsure what a good cutoff is. This is a great way to tune our model and maximize performance in a concise manner.
+
+Now that we have the optimal threshold for our `Binarizer()`, we can create our Pipeline once again and evaluate the performance with $R^2$
