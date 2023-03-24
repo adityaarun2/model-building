@@ -42,15 +42,14 @@ The first step in building the baseline model is to create our test and training
 
 The first couple of features we will build our baseline model on are: `complexity` (a categorical column) and `n_steps` (a quantitative column).
 
-Since `complexity` is a categorical column, we will have to transform it. Here, we will use the `OneHotEncoder()` because there are only two types of complexities: `simple` or `complex`. Moreover, we decided to drop one of the columns in order to prevent multicollinearity. As we will see later on, the `OneHotEncoder()` has only one category called `x0_simple` indicating that a value of 1 means a recipe is `simple` (less than 9 ingredients), while a value of `0` means a recipe is `complex` (greater than 9 ingredients).
+Our baseline model is going to be built on a Pipeline which utilizes a ColumnTransformer() for preprocessing and transforming the data as well as a Linear Regression model/estimator. Let's take a deeper look at the type of transformers we are going to be applying to our features.
 
-We will leave `n_steps` as it is because it is a quantitative column.
+Since complexity is a categorical column, we will have to transform it. Here, we will use the OneHotEncoder() because there are only two types of complexities: simple or complex. Moreover, we decided to drop one of the columns in order to prevent multicollinearity. This means that the OneHotEncoder() has only one category called x0_simple, indicating that a value of 1 means a recipe is simple (less than 9 ingredients), while a value of 0 means a recipe is complex (greater than 9 ingredients). Furthermore, this makes sense intuitively since we would expect simpler recipes which cater to the general public to have higher ratings compared to recipes that are complex and difficult to make.
 
-### Tuning the Model
-Now that we have our transformers and `Pipeline` declared, we are ready to train our model. We will fit the Pipeline on the `X_train` and `y_train` data sets that we created earlier.
+Also, we will leave `n_steps` as it is because it is a quantitative column.
 
 ### Model Performance
-After fitting our pipeline creating a prediction based on the input testing set, we end up with an $R^2$ of our model is `-0.00017975548942428254`. This means that our model barely, if not, didn't fit with the testing data at all. This current baseline model is **not good** based off this performance. In other words, there was a very poor linear fit. Hopefully by adding more features, we can improve the performance in the Final Model.
+After fitting our pipeline creating a prediction based on the input testing set, we end up with an $R^2$ of our model to be `-0.00017975548942428254`. This means that our model barely, if not, didn't fit with the testing data at all. This current baseline model is **not good** based off this performance. In other words, there was a very poor linear fit. Hopefully by adding more features, we can improve the performance in the Final Model.
 
 <center><img src="ml.jpg" alt="Picture of a robot thinking" height="300" width="450"></center>
 
