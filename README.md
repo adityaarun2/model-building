@@ -1,12 +1,10 @@
-# The Great Recipe Rating Race: Using Machine Learning to Help You Cook Like a Pro!
+# The Great Recipe Rating Race: Using Machine Learning to Help You Cook Like a Pro
 
-Welcome to our model building project, a project focused on predicting ratings of recipes. The goal of this project is to develop a machine learning model that can accurately predict the ratings of recipes based on various features such as ingredients, cooking time, and difficulty level. This is a regression problem, as the predicted variable (ratings) is a continuous numerical variable.
+Welcome to our model building project, a project focused on predicting ratings of recipes. The goal of this project is to develop a machine learning model that can accurately predict the ratings of recipes based on various features such as ingredients, cooking time, and complexity. This is a regression problem, as the predicted variable (ratings) is a continuous numerical variable.
 
 Our response variable is the recipe rating, which ranges from 1 to 5. We chose this variable because it is a crucial factor for determining the success and popularity of a recipe. Our model will assist users in finding recipes that are likely to be highly rated, leading to a more satisfying cooking experience.
 
 The dataset used for this analysis is collected from <a href="food.com">food.com</a>. and contains information on a variety of recipes, including their ingredients, cooking times, and user ratings. By exploring this data, we hope to gain insights into the factors that contribute to a recipe’s success and popularity.
-
-To evaluate our model's performance, we will use the root mean squared error (RMSE) metric. This metric measures the average of the squared differences between the predicted and actual ratings. We chose RMSE because it provides a more comprehensive measure of our model's accuracy compared to other metrics such as mean absolute error.
 
 We hope that this project will help food enthusiasts and cooking enthusiasts discover new and highly-rated recipes with ease.
 
@@ -48,10 +46,10 @@ Since `complexity` is a categorical column, we will have to transform it. Here, 
 
 We will leave `n_steps` as it is because it is a quantitative column.
 
-### Training the Pipeline
-Now that we have our transformers and `Pipeline` declared, we are ready to train our model. Below, we fit the Pipeline on the `X_train` and `y_train` data sets that we created earlier.
+### Tuning the Model
+Now that we have our transformers and `Pipeline` declared, we are ready to train our model. We will fit the Pipeline on the `X_train` and `y_train` data sets that we created earlier.
 
-### Performance
+### Model Performance
 After fitting our pipeline creating a prediction based on the input testing set, we end up with an $R^2$ of our model is `-0.00017975548942428254`. This means that our model barely, if not, didn't fit with the testing data at all. This current baseline model is **not good** based off this performance. In other words, there was a very poor linear fit. Hopefully by adding more features, we can improve the performance in the Final Model.
 
 ---
@@ -62,17 +60,16 @@ The next couple of features that we will be adding on top of our baseline model 
 
 Since the `calories` data has such a wide range and tends to be in the hundreds if not thousands, we will apply `StandardScaler()` in order to standardize the data. Moreover, we will apply `Binarizer()` to the `protein (PDV)` column because it will be helpful to determine how much protein can be considered a significant amount. For the threshold of our `Binarizer()`, we will determine the optimal value using `GridSearchCV`.
 
-### Tuning the model
+### Tuning the Model
 In order to optimize our model, we will utilize `GridSearchCV` in order to find the best combinations of hyperparameters. Specifically, we will be searching for the optimal `threshold` parameter value for the `Binarizer()` transformer since we are unsure what a good cutoff is. This is a great way to tune our model and maximize performance in a concise manner.
 
 Based on the `GridSearch`, the optimal threshold for our `Binarizer()` is 30. This means that any values above 30 will be set to 1 and the rest will be set to 0. Now that we have the optimal threshold for our `Binarizer()`, we can create our Pipeline once again and evaluate the performance with $R^2$.
 
 ### Model Performance
-
 The model chosen is a regression model, which predicts recipe ratings based on features such as `calories` and `total_fat (PDV)`. The dataset was split into training and testing sets and the data was standardized using `StdScaler` for the calories column. `Binarizer` was applied to the saturated fat column with the threshold value determined by `GridSearchCV`.
 
 The hyperparameter tuned was the threshold value for the Binarizer() transformer. The method used to select hyperparameters was `GridSearchCV`. This method exhaustively searches through a specified parameter grid, fitting the estimator for each combination of parameters and returns the best combination. The performance of the Final Model was evaluated using RMSE, and the best performing hyperparameters were selected based on the lowest RMSE value.
 
 The $R^2$ of our final model is `0.0003677010479545828`. This is a clear improvement over our baseline model which had a negative $R^2$. Undoubtedly, the addition of the new features `calories` and `protein` were critical to the improvement in performance of our Linear Regression model. We believe this is because these are important factors people consider when rating recipes. They are important indicators of the nutritional value and overall healthiness of a recipe. For instance, a recipe with a low calorie coutn and high protein content is considered a healthy meal. These are aspects everyone takes into consideration when rating a recipe.
 
-The Final Model's performance was an improvement over the Baseline Model's performance as it included additional features such as calories and total fat. The addition of these features helped the model better predict recipe ratings, leading to a more accurate and comprehensive model.
+The final model's performance was an improvement over the Baseline Model's performance as it included additional features such as calories and total fat. The addition of these features helped the model better predict recipe ratings, leading to a more accurate and comprehensive model.
