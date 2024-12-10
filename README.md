@@ -1,5 +1,7 @@
 # The Great Recipe Rating Race: Using Machine Learning to Help You Cook Like a Pro
 
+## Introduction
+
 Welcome to our model building project, a project focused on predicting ratings of recipes. The goal of this project is to develop a machine learning model that can accurately predict the ratings of recipes based on various features such as ingredients, cooking time, and complexity. This is a regression problem, as the predicted variable (ratings) is a continuous numerical variable.
 
 Our response variable is the recipe rating, which ranges from 1 to 5. We chose this variable because it is a crucial factor for determining the success and popularity of a recipe. Our model will assist users in finding recipes that are likely to be highly rated, leading to a more satisfying cooking experience.
